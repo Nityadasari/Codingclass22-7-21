@@ -1,0 +1,35 @@
+import java.util.*;
+class Coding1
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int c=0;
+        int k=0;
+        System.out.println("Enter n value:");
+        int n=sc.nextInt();
+        HashMap<Integer,Integer>x=new HashMap<Integer,Integer>();
+        Integer a[]=new Integer[n];
+        System.out.println("Enter numbers:");
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<a.length;i++)
+        {
+            if(x.containsKey(a[i]))
+            x.put(a[i],x.get(a[i])+1);
+            else
+            x.put(a[i],1);
+        }
+        for(Map.Entry<Integer,Integer>i:x.entrySet())
+        {
+            if(i.getKey()%5==0)
+            c=c+1;
+            else if(i.getKey()%3==0)
+            k=k+1;
+        }
+        System.out.println("5"+"="+c);
+        System.out.println("3"+"="+k);
+    }
+}
